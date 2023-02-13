@@ -1,5 +1,9 @@
+@import url(https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap);
+
+
 body{
     background-color: darkgrey;
+    font-family: 'Text Me One', sans-serif;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -11,5 +15,6 @@ body{
  }
 
  .myLabel{
-    margin-top: -10px;
+    margin-top: -20px;
+    font-size: 0.75rem;
  }
