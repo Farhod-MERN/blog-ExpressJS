@@ -1,0 +1,42 @@
+@layout('layouts.app')
+
+@section("content")
+<header class="masthead" style="background-image: url('/assets/img/contact-bg.jpg')">
+  <div class="container position-relative px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+              <div class="page-heading">
+                  <h1>Create Post</h1>
+                  <span class="subheading">You can say everything what you want...</span>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row mb-5">
+    <div class="col-md-8 offset-md-2 border">
+      <form action="/posts/new" method="POST">
+        <div class="form-floating mt-3">
+          <input type="text" class="form-control rounded" name="title" placeholder="Enter Your Title...">
+          <label>Title</label>
+        </div>
+        <div class="form-floating mt-3">
+          <input type="text" class="form-control rounded" name="description" placeholder="Enter Your DEscription...">
+          <label>Description</label>
+        </div>
+        <div class=" my-3">
+          <textarea id="content" name="content" class="form-control rounded" placeholder="Enter Your Content..." style="height: 12rem"></textarea>
+        </div>
+        <div class="form-floating mt-3 rounded">
+          <input class="form-control pt-4 px-3 rounded" name="image" type="file" id="formFile">
+        </div>
+        <div class="form-group text-center my-4">
+          <button type="submit" class="btn btn-primary">Create Post</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+@endsection
