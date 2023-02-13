@@ -17,7 +17,11 @@
 <div class="container">
   <div class="row mb-5">
     <div class="col-md-8 offset-md-2 border">
-      <form action="/posts/new" method="POST">
+      <form action="/posts/create" method="POST" enctype="multipart/form-data">
+        <div class="form-floating mt-3">
+          <input type="text" class="form-control rounded" name="username" placeholder="Enter Your Title...">
+          <label>Username</label>
+        </div>
         <div class="form-floating mt-3">
           <input type="text" class="form-control rounded" name="title" placeholder="Enter Your Title...">
           <label>Title</label>
@@ -31,6 +35,7 @@
         </div>
         <div class="form-floating mt-3 rounded">
           <input class="form-control pt-4 px-3 rounded" name="image" type="file" id="formFile">
+          <label class="myLabel">Your post's background-image</label>
         </div>
         <div class="form-group text-center my-4">
           <button type="submit" class="btn btn-primary">Create Post</button>

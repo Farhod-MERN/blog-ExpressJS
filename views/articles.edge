@@ -7,8 +7,8 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="site-heading">
-                    <h1>Clean Blog</h1>
-                    <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                    <h1>All Articles</h1>
+                    <span class="subheading">Just for you ❤️</span>
                 </div>
             </div>
         </div>
@@ -18,13 +18,11 @@
 <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
-            <h3 class="text-light post-subtitle">Our last Articles for you ❤️</h3>
-            <hr class="my-4" />
             @each(post in posts)
             <div class="post-preview">
                 <a href="/post/{{post._id}}">
-                    <h3 class="">{{post.title}}</h3>
-                    <h6 class="post-subtitle">{{post.description}}</h6>
+                    <h2 class="post-title">{{post.title}}</h2>
+                    <h3 class="post-subtitle">{{post.description}}</h3>
                 </a>
                 <p class="post-meta">
                     Posted by | 
@@ -36,6 +34,7 @@
             <hr class="my-4" />
             @endeach
             <!-- Pager-->
+            <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
         </div>
     </div>
 </div>
