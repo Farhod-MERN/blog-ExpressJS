@@ -1,5 +1,4 @@
 const express = require("express")
-const path = require("path")
 const expressEdge = require("express-edge") 
 const mongoose = require("mongoose")
 const Post = require("./models/Post")
@@ -12,6 +11,8 @@ const getPostsCont = require("./controllers/getPosts")
 const getCreatedPosts = require("./controllers/createdPost")
 const createPosts = require("./controllers/createPostss")
 const getAboutCont = require("./controllers/getAbout")
+const getContactCont = require("./controllers/getContact")
+
 
 app.set("views", `${__dirname}/views`)
 
@@ -29,6 +30,7 @@ app.get("/post/:id", getPostsCont)
 app.get("/posts/create", getCreatedPosts)
 app.post("/posts/create", createPostValidate ,createPosts)
 app.get("/about", getAboutCont)
+app.get("/contact", getContactCont)
 
 
 mongoose.set('strictQuery', false);
