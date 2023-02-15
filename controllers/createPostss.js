@@ -8,7 +8,7 @@ module.exports = (req, res)=>{
            console.log(err)
        }
        Post.create({...req.body, image: `posts/${image.name}` }, (err, data)=>{
-           err ? console.log(err) : console.log(data);
+           err ? console.log(err) : console.log("data");
            res.redirect("/posts/create")
        }) 
     })

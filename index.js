@@ -14,9 +14,19 @@ const getAboutCont = require("./controllers/getAbout")
 const getContactCont = require("./controllers/getContact")
 const createUserCont = require("./controllers/createUser")
 const storeUserCont = require("./controllers/userStore")
+const loginCont = require("./controllers/loginPage")
+const loginStoreCont = require("./controllers/loginPost")
+const expressSession = require("express-session")
+const mongoStore = require("connect-mongo")
+
+const MongoUrl = "mongodb+srv://farhod:NtFq29mdbPGAJSEn@cluster0.las5s2w.mongodb.net/?retryWrites=true&w=majority"
 
 app.set("views", `${__dirname}/views`)
 
+app.use(expressSession({
+    secret: "farhod",
+    store: mongoStore.create({mongoUrl:MongoUrl})
+}))
 app.use(fileUpload())
 app.use(express.static("public"))
 app.use(express.json())
@@ -34,10 +44,12 @@ app.get("/about", getAboutCont)
 app.get("/contact", getContactCont)
 app.get("/reg", createUserCont)
 app.post("/auth/reg", storeUserCont)
+app.get("/login", loginCont)
+app.post("/auth/login", loginStoreCont)
 
 
 mongoose.set('strictQuery', false);
-mongoose.connect("mongodb+srv://farhod:NtFq29mdbPGAJSEn@cluster0.las5s2w.mongodb.net/?retryWrites=true&w=majority", ()=>{
+mongoose.connect(MongoUrl, ()=>{
     console.log("Mongoose is connected");
 })
 

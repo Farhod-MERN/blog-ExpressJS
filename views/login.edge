@@ -1,0 +1,29 @@
+@layout("layouts.app")
+
+@section("content")
+    <!-- Main Content-->
+    <main class="mb-4 mt-5">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h4 class="mt-5 text-center">After Logged in You can ctreate any post</h4>
+                    <div class="my-5">
+                        <form id="contactForm" action="/auth/login" method="POST">
+                            <div class="form-floating">
+                                <input name="email" required class="form-control rounded mb-2" id="email" type="email" placeholder="Enter your email...">
+                                <label for="email">Email address</label>
+                            </div>
+                            <div class="form-floating">
+                                <input name="password" required class="form-control rounded mb-2" id="password" type="password" placeholder="Enter your password..." >
+                                <label for="phone">Enter your password</label>
+                            </div>
+                        
+                            <br>
+                            <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Log in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+@endsection
