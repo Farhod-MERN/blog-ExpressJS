@@ -12,7 +12,8 @@ const getCreatedPosts = require("./controllers/createdPost")
 const createPosts = require("./controllers/createPostss")
 const getAboutCont = require("./controllers/getAbout")
 const getContactCont = require("./controllers/getContact")
-
+const createUserCont = require("./controllers/createUser")
+const storeUserCont = require("./controllers/userStore")
 
 app.set("views", `${__dirname}/views`)
 
@@ -31,6 +32,8 @@ app.get("/posts/create", getCreatedPosts)
 app.post("/posts/create", createPostValidate ,createPosts)
 app.get("/about", getAboutCont)
 app.get("/contact", getContactCont)
+app.get("/reg", createUserCont)
+app.post("/auth/reg", storeUserCont)
 
 
 mongoose.set('strictQuery', false);
