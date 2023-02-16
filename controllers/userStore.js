@@ -15,6 +15,6 @@ module.exports = (req, res) =>{
         user.password = await bcrypt.hash(user.password, salt)
         user.save()
         
-        res.redirect("/")
+        res.redirect("/login")
     })
 }
