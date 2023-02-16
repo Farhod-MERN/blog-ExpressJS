@@ -8,21 +8,28 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <h4 class="mt-5 text-center">After registering You can ctreate any post</h4>
                     <div class="my-5">
+                        @if(errors.length > 0)
+                            <ul class="list-group mb-3">
+                                @each(err in errors)
+                                    <li class="list-group-item text-danger">Error: {{err}}</li>
+                                @endeach
+                            </ul>
+                        @endif
                         <form id="contactForm" action="/auth/reg" method="POST">
                             <div class="form-floating">
-                                <input name="username" required class="form-control rounded mb-2" id="name" type="text" placeholder="Enter your name...">
+                                <input name="username" value="{{data.username || ""}}"  class="form-control rounded mb-2" id="name" type="text" placeholder="Enter your name...">
                                 <label for="name">User Name</label>
                             </div>
                             <div class="form-floating">
-                                <input name="email" required class="form-control rounded mb-2" id="email" type="email" placeholder="Enter your email...">
+                                <input name="email" value="{{data.email || ""}}"  class="form-control rounded mb-2" id="email" type="email" placeholder="Enter your email...">
                                 <label for="email">Email address</label>
                             </div>
                             <div class="form-floating">
-                                <input name="tel" required class="form-control rounded mb-2" id="phone" type="tel" placeholder="Enter your phone number...">
+                                <input name="tel" value="{{data.tel || ""}}" class="form-control rounded mb-2" id="phone" type="tel" placeholder="Enter your phone number...">
                                 <label for="phone">Phone Number</label>
                             </div>
                             <div class="form-floating">
-                                <input name="password" required class="form-control rounded mb-2" id="password" type="password" placeholder="Enter your password..." >
+                                <input name="password" value="{{data.password || ""}}" class="form-control rounded mb-2" id="password" type="password" placeholder="Enter your password..." >
                                 <label for="phone">Create your password</label>
                             </div>
                         

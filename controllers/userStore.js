@@ -5,6 +5,9 @@ module.exports = (req, res) =>{
     
     User.create(req.body ,async (err, user)=>{
         if(err){
+            const registerError = Object.keys(err.errors).map(index => err.errors[index].message)
+            req.flash("registerError" ,registerError)
+            req.flash("data", req.body)
             return res.redirect("/reg")
         }
 
